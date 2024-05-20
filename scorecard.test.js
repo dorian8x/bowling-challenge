@@ -13,20 +13,21 @@ describe("the scorecard class", () => {
         expect(testScorecard.frames).toEqual([fakeFrame]);
     });
 
-    // it("thows an error if given non-numbers as values", () => {
-    //     const testScorecard = new Scorecard;
-    //     expect(testScorecard.addFrame("three", 4)).toThrow(/* */);
-    // });
+    it("thows an error if given non-numbers as values", () => {
+        const testScorecard = new Scorecard;
+        expect(() => {testScorecard.addFrame("three", 4)}).toThrow("Enter values as numbers.");
+    });
 
-    // it("thows an error if given numbers out of range", () => {
-    //     const testScorecard = new Scorecard;
-    //     expect(testScorecard.addFrame(3, 11)).toThrow(/* */);
-    // });
+    it("thows an error if given numbers out of range", () => {
+        const testScorecard = new Scorecard;
+        expect(() => {testScorecard.addFrame(3, 11)}).toThrow("Enter valid scores");
+    });
 
-    // it("thows an error if given total value >10", () => {
-    //     const testScorecard = new Scorecard;
-    //     expect(testScorecard.addFrame(7, 4)).toThrow(/* */);
-    // });
+    it("thows an error if given total value >10", () => {
+        const testScorecard = new Scorecard;
+        expect(() => {testScorecard.addFrame(7, 4)}).toThrow("Enter valid scores");
+    });
+
     // it("calculates the score", () => {
     //     const testScorecard = new Scorecard;
     //     expect(testScorecard.getScore()).toEqual(0);
